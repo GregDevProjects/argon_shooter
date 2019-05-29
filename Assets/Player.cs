@@ -1,15 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float xClamp = 1f;
-    [SerializeField] float yClamp = 1f;
-    [Tooltip("In ms^-1")][SerializeField] float speed = 4f;
+    [SerializeField] float xClamp = 100f;
+    [SerializeField] float yClamp = 50f;
+    [Tooltip("In ms^-1")][SerializeField] float speed = 40f;
+
+    
+    [SerializeField] float positionRollFactor = 1f;
+    [SerializeField] float controlRollFactor = -10f;
+
+    [SerializeField] float positionPitchFactor = 1f;
+    [SerializeField] float controlPitchFactor = -10f;
 
     Camera mainCamera;
+    float xThrow, yThrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +29,35 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        ProcessTranslation();
+        ProcessRotation();
 
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+    }
+
+    private void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+        float pitch = pitchDueToControlThrow + pitchDueToPosition;
+
+
+        float rollDueToPosition = transform.localPosition.x * positionRollFactor;
+        float rollDueToControlThrow = xThrow * controlRollFactor;
+        float roll = rollDueToControlThrow + rollDueToControlThrow;
+
+
+        float yaw = -90f;
+
+
+        transform.localRotation = Quaternion.Euler(roll, yaw, pitch);
+        print(yThrow);
+
+    }
+
+    private void ProcessTranslation()
+    {
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
         //if the frame takes longer, you want to move further
         //this is why we multiply by deltatime
         float xOffset = speed * xThrow * Time.deltaTime;
@@ -31,18 +67,17 @@ public class Player : MonoBehaviour
             xClamp
             );
 
-        float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
         float yOffset = speed * yThrow * Time.deltaTime;
 
-        float rawNewYPos = transform.localPosition.y + yOffset;
-
-        Mathf.Clamp(
+        float rawNewYPos = Mathf.Clamp(
             transform.localPosition.y + yOffset,
             -yClamp,
             yClamp
             );
 
-        transform.localPosition = mainCamera.ViewportToWorldPoint(new Vector3(rawNewXPos, rawNewYPos, transform.localPosition.z));
-        print(xThrow);
+
+
+        transform.localPosition = new Vector3(rawNewXPos, rawNewYPos, transform.localPosition.z);
     }
 }
