@@ -35,6 +35,16 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("collision");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("trigger");
+    }
+
     private void ProcessRotation()
     {
         float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
@@ -51,7 +61,6 @@ public class Player : MonoBehaviour
 
 
         transform.localRotation = Quaternion.Euler(roll, yaw, pitch);
-        print(yThrow);
 
     }
 

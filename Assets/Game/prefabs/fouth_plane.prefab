@@ -1787,6 +1787,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5112741708027434187}
+  - component: {fileID: 8296172667911275517}
+  - component: {fileID: 8296172667911275518}
   m_Layer: 0
   m_Name: fouth_plane
   m_TagString: Untagged
@@ -1803,7 +1805,7 @@ Transform:
   m_GameObject: {fileID: 8119781935395006168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 460.76843, y: 107.1367, z: 294.37943}
-  m_LocalScale: {x: 6.394849, y: 6.394849, z: 6.394849}
+  m_LocalScale: {x: 3.7020247, y: 3.7020235, z: 3.7020247}
   m_Children:
   - {fileID: 7639047699921104037}
   - {fileID: 8726008499400864671}
@@ -1833,6 +1835,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8296172667911275517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119781935395006168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29aa7c1aaa52a2744a03ca03e620415c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xClamp: 90
+  yClamp: 40
+  speed: 60
+  positionRollFactor: 1
+  controlRollFactor: -30
+  positionPitchFactor: 0.5
+  controlPitchFactor: 30
+--- !u!114 &8296172667911275518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8119781935395006168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea36ef7a00788340aa4961f12313cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_muzzle: {fileID: 5112741708027434187}
+  m_shotPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
 --- !u!1 &8351870762958871666
 GameObject:
   m_ObjectHideFlags: 0
