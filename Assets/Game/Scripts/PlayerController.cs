@@ -4,20 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] float xClamp = 100f;
     [SerializeField] float yClamp = 50f;
     [Tooltip("In ms^-1")][SerializeField] float speed = 40f;
 
-    
+    [Header("Sceen position based")]
     [SerializeField] float positionRollFactor = 1f;
-    [SerializeField] float controlRollFactor = -10f;
-
     [SerializeField] float positionPitchFactor = 1f;
+    
+    [Header("Control throw based")]
+    [SerializeField] float controlRollFactor = -10f;
     [SerializeField] float controlPitchFactor = -10f;
 
     Camera mainCamera;
+
+    Boolean isDead = false;
     float xThrow, yThrow;
     // Start is called before the first frame update
     void Start()
@@ -26,24 +30,26 @@ public class Player : MonoBehaviour
         mainCamera = GetComponentInParent<Camera>();
     }
 
+    public void OnDeathStart() //called by string refrence
+    {
+        print("player got death");
+        isDead = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
         
         ProcessTranslation();
         ProcessRotation();
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("collision");
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        print("trigger");
-    }
 
     private void ProcessRotation()
     {
