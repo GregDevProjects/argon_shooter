@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CannonBehavior : MonoBehaviour {
 
 	//public Transform m_cannonRot;
 	public Transform m_muzzle;
 	public GameObject m_shotPrefab;
+    private bool canShoot = true;
+    [SerializeField] float timeBetweenShots = 1f;
 	//public Texture2D m_guiTexture;
 
 	// Use this for initialization
@@ -13,18 +16,30 @@ public class CannonBehavior : MonoBehaviour {
 	{
 	
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (CrossPlatformInputManager.GetButton("Fire1"))
 		{
-            //Quaternion localRotation = Quaternion.Euler(m_muzzle.rotation.x, m_muzzle.rotation.y, m_muzzle.rotation.z);
+            if (!canShoot)
+            {
+                return;
+            }
             m_muzzle.transform.Rotate(0, 90, 0);
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
 			GameObject.Destroy(go, 1f);
+            canShoot = false;
+            Invoke("enableShot", timeBetweenShots);
 		}
 	}
+
+    void enableShot()
+    {
+        canShoot = true;
+    }
 
 	void OnGUI()
 	{

@@ -10,6 +10,7 @@ public class CollisionHandler : MonoBehaviour
 {
     [Tooltip("prefab ")][SerializeField] GameObject deathFx;
     [SerializeField] float loadDelay = 1f;
+    [SerializeField] Boolean playerCollisionsEnabled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +37,12 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        return;
-        StartDeathSequence();
+        if (!playerCollisionsEnabled)
+        {
+            return;
+        }
         
-        // print("trigger");
+        StartDeathSequence();
     }
 
     // Update is called once per frame

@@ -676,6 +676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 6748294533653201302, guid: 85ad8fd3fe9575f49903069c9c02632e, type: 3}
+  parent: {fileID: 0}
+  scorePerHit: 10
+  maxHits: 1
 --- !u!54 &5679917652276448178
 Rigidbody:
   m_ObjectHideFlags: 0
