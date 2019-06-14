@@ -1160,76 +1160,6 @@ PrefabInstance:
       objectReference: {fileID: 11822414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4b7fad5d2d23f48b79e606351d3804, type: 3}
---- !u!1 &509007296
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 509007299}
-  - component: {fileID: 509007298}
-  - component: {fileID: 509007297}
-  m_Layer: 0
-  m_Name: Master Timeline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &509007297
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509007296}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!320 &509007298
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509007296}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: dfbb10538871fb04499ad93859ff53e0, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -5541696071878422804, guid: dfbb10538871fb04499ad93859ff53e0, type: 2}
-    value: {fileID: 1439268518}
-  m_ExposedReferences:
-    m_References: []
---- !u!4 &509007299
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509007296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 527.138, y: 119.24354, z: 252.59573}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533627624
 GameObject:
   m_ObjectHideFlags: 0
@@ -4692,6 +4622,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1439268519
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439268517}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c0a27375bc16ccc43a5a9214592b9de5, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -644226823683479043, guid: c0a27375bc16ccc43a5a9214592b9de5, type: 2}
+    value: {fileID: 1439268518}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1446879959
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,22 +7638,22 @@ PrefabInstance:
     - target: {fileID: 4092459092571770640, guid: f3d5ef5cb9218ab4e8ccbecc7ceca0e9,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: Player Rig
       objectReference: {fileID: 0}
     - target: {fileID: 4092459092571770645, guid: f3d5ef5cb9218ab4e8ccbecc7ceca0e9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 199.55
+      value: 856.8
       objectReference: {fileID: 0}
     - target: {fileID: 4092459092571770645, guid: f3d5ef5cb9218ab4e8ccbecc7ceca0e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 177
+      value: 81.2
       objectReference: {fileID: 0}
     - target: {fileID: 4092459092571770645, guid: f3d5ef5cb9218ab4e8ccbecc7ceca0e9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 310
+      value: 311.6
       objectReference: {fileID: 0}
     - target: {fileID: 4092459092571770645, guid: f3d5ef5cb9218ab4e8ccbecc7ceca0e9,
         type: 3}
