@@ -19,8 +19,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        
+
     }
 
     private void StartDeathSequence()
@@ -41,7 +40,12 @@ public class CollisionHandler : MonoBehaviour
         {
             return;
         }
-        
+
+        if (other.gameObject.name == "LaserShot(Clone)")
+        {
+            return;
+        }
+
         StartDeathSequence();
     }
 
