@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Rotater : MonoBehaviour
 {
+    enum Axis { X, Y, Z };
     [SerializeField] float speed = 15;
-    [Tooltip("lowercase")] [SerializeField] string axis = "z";
+    [SerializeField] Axis axis = Axis.Z;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +18,13 @@ public class Rotater : MonoBehaviour
     {
         switch (axis)
         {
-            case "x":
+            case Axis.X:
                 gameObject.transform.Rotate(Time.deltaTime * speed, 0,0);
                 break;
-            case "y":
+            case Axis.Y:
                 gameObject.transform.Rotate(0, Time.deltaTime * speed, 0);
                 break;
-            case "z":
+            case Axis.Z:
                 gameObject.transform.Rotate(0, 0, Time.deltaTime * speed);
                 break;
         }

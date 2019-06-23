@@ -15,8 +15,6 @@ public class DisapearAfterPassPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(player.transform.position.x);
-
         if (player.transform.position.x - offsetAfterPass > gameObject.transform.position.x)
         {
             Destroy(gameObject);

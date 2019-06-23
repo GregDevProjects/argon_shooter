@@ -28,4 +28,14 @@ public class ConvoBobSceneOne : MonoBehaviour
     {
         convoText.text = "Sounds good, we'll start with some movement tests. Use the WASD keys or left analogue stick to move";
     }
+
+    public void NiceWork()
+    {
+        convoText.text = "Nice Work!";
+    }
+
+    public void Shooting()
+    {
+        convoText.text = "Not quite, we'll need a weapons test. Press space or the A button to fire";
+    }
 }

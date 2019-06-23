@@ -21,6 +21,11 @@ public class ConvoFredSceneOne : MonoBehaviour
 
     public void TubeGetOverWith()
     {
-        convoText.text = "It's your last day in the sim! How are you feeling, Fred?";
+        convoText.text = "I feel like I'm stuck in a damn tube. Can we just get this over with?";
+    }
+
+    public void SimOverYet()
+    {
+        convoText.text = "Sim over yet?";
     }
 }
