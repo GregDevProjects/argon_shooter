@@ -28,7 +28,7 @@ public class CannonBehavior : MonoBehaviour {
             {
                 return;
             }
-            m_muzzle.transform.Rotate(0, 90, 0);
+            //m_muzzle.transform.Rotate(0, 90, 0);
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
 			GameObject.Destroy(go, 1f);
             canShoot = false;
