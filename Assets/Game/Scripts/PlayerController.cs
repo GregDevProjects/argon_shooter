@@ -63,10 +63,7 @@ public class PlayerController : MonoBehaviour
         float roll = rollDueToControlThrow + rollDueToControlThrow;
 
 
-        float yaw = -90f;
-
-
-        transform.localRotation = Quaternion.Euler(roll, 0, pitch);
+        transform.localRotation = Quaternion.Euler(-pitch, 0, roll);
 
     }
 

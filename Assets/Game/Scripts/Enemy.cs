@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
 
     private void onDestroyedByPlayer()
     {
-        scoreBoard.ScoreHit(scorePerHit);
+        //TODO: 
+        //scoreBoard.ScoreHit(scorePerHit);
         GameObject fx = Instantiate(deathFx, gameObject.transform.position, Quaternion.identity);
         fx.transform.parent = parent;
         GameObject.Destroy(gameObject);

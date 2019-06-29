@@ -36,6 +36,6 @@ public class ConvoBobSceneOne : MonoBehaviour
 
     public void Shooting()
     {
-        convoText.text = "Not quite, we'll need a weapons test. Press space or the A button to fire";
+        convoText.text = "Not quite, we'll need a weapons test. Use the mouse to aim and space or the A button to fire";
     }
 }
